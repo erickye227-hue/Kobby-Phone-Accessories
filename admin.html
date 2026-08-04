@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>
+Admin Dashboard - Kobby's Phone Accessories
+</title>
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+
+<body>
+
+
+<header>
+
+<h1>
+Kobby's Admin Dashboard
+</h1>
+
+
+<nav>
+
+<a href="index.html">
+🏠 Store
+</a>
+
+<a href="#" id="logout-btn">
+🚪 Logout
+</a>
+
+</nav>
+
+
+</header>
+
+
+
+<main>
+
+
+<!-- =========================
+     DASHBOARD OVERVIEW
+========================= -->
+
+<section class="admin-dashboard">
+
+
+<h2>
+Dashboard Overview
+</h2>
+
+
+
+<div class="admin-cards">
+
+
+
+<!-- TOTAL ORDERS -->
+
+<div class="admin-card">
+
+<h3>
+Total Orders
+</h3>
+
+<p id="total-orders">
+0
+</p>
+
+</div>
+
+
+
+
+
+<!-- TOTAL PRODUCTS -->
+
+<div class="admin-card">
+
+<h3>
+Total Products
+</h3>
+
+<p id="total-products">
+0
+</p>
+
+</div>
+
+
+
+
+
+<!-- TOTAL SALES -->
+
+<div class="admin-card">
+
+<h3>
+Total Sales
+</h3>
+
+<p id="total-sales">
+₵0
+</p>
+
+</div>
+
+
+
+
+
+<!-- PENDING ORDERS -->
+
+<div class="admin-card">
+
+<h3>
+Pending Orders
+</h3>
+
+<p id="pending-orders">
+0
+</p>
+
+</div>
+
+
+
+
+
+<!-- DELIVERED ORDERS -->
+
+<div class="admin-card">
+
+<h3>
+Delivered Orders
+</h3>
+
+<p id="delivered-orders">
+0
+</p>
+
+</div>
+
+
+
+
+
+<!-- LOW STOCK -->
+
+<div class="admin-card">
+
+<h3>
+Low Stock
+</h3>
+
+<p id="low-stock">
+0
+</p>
+
+</div>
+
+
+
+
+
+<!-- TODAY SALES -->
+
+<div class="admin-card">
+
+<h3>
+Today's Sales
+</h3>
+
+<p id="today-sales">
+₵0
+</p>
+
+</div>
+
+
+
+
+
+<!-- MONTH SALES -->
+
+<div class="admin-card">
+
+<h3>
+This Month Sales
+</h3>
+
+<p id="month-sales">
+₵0
+</p>
+
+</div>
+
+
+
+
+
+<!-- BEST SELLING PRODUCT -->
+
+<div class="admin-card">
+
+<h3>
+Best Selling Product
+</h3>
+
+<p id="best-product">
+None
+</p>
+
+</div>
+
+
+
+</div>
+
+
+</section>
+
+
+
+
+
+<!-- =========================
+     RECENT ORDERS
+========================= -->
+
+
+<section class="recent-orders">
+
+
+<h2>
+Recent Orders
+</h2>
+
+
+
+<div id="recent-orders-list">
+
+</div>
+
+
+</section>
+
+
+
+
+<!-- =========================
+     MANAGE PRODUCTS
+========================= -->
+
+
+<section class="admin-products">
+
+
+<h2>
+Manage Products
+</h2>
+
+
+<input 
+type="text"
+id="product-search"
+placeholder="Search products..."
+>
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+  <th>
+Image
+</th>
+
+<th>
+Name
+</th>
+
+
+<th>
+Category
+</th>
+
+
+<th>
+Price
+</th>
+
+
+<th>
+Stock
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+
+<tbody id="product-table">
+
+
+</tbody>
+
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+     ADD PRODUCT
+========================= -->
+
+
+<section class="add-product">
+
+
+<h2>
+Add New Product
+</h2>
+
+
+
+<form id="product-form">
+
+
+<input 
+type="text"
+id="product-name"
+placeholder="Product Name"
+required
+>
+
+
+
+<input 
+type="text"
+id="product-category"
+placeholder="Category"
+required
+>
+
+
+
+<input 
+type="number"
+id="product-price"
+placeholder="Price"
+required
+>
+
+
+
+<input 
+type="number"
+id="product-stock"
+placeholder="Stock Quantity"
+required
+>
+
+<input 
+type="file"
+id="product-image"
+accept="image/*"
+>
+
+
+<button type="submit">
+Add Product
+</button>
+
+
+</form>
+
+
+</section>
+
+
+
+
+
+
+
+<!-- =========================
+     CUSTOMER ORDERS
+========================= -->
+
+
+<section class="admin-orders">
+
+
+<h2>
+Customer Orders
+</h2>
+
+
+
+<input 
+type="text"
+id="order-search"
+placeholder="Search customer orders..."
+>
+
+
+
+
+<select id="order-status-filter">
+
+
+<option value="All">
+All Orders
+</option>
+
+
+<option value="Pending">
+Pending
+</option>
+
+
+<option value="Processing">
+Processing
+</option>
+
+
+<option value="Delivered">
+Delivered
+</option>
+
+
+<option value="Cancelled">
+Cancelled
+</option>
+
+
+</select>
+
+
+
+
+
+<table>
+
+
+<thead>
+
+<tr>
+
+<th>
+Customer
+</th>
+
+
+<th>
+Phone
+</th>
+
+
+<th>
+Items
+</th>
+
+
+<th>
+Total
+</th>
+
+
+<th>
+Date
+</th>
+
+
+<th>
+Status
+</th>
+
+
+<th>
+Action
+</th>
+
+
+</tr>
+
+</thead>
+
+
+
+<tbody id="orders-table">
+
+</tbody>
+
+
+
+</table>
+
+
+</section>
+
+
+
+
+
+</main>
+
+
+
+
+
+
+
+<footer>
+
+<p>
+© 2026 Kobby's Phone Accessories & Repair
+</p>
+
+</footer>
+
+
+<!-- ORDER DETAILS MODAL -->
+
+<div id="order-modal" class="order-modal">
+
+
+<div class="order-modal-content">
+
+
+<span 
+class="close-modal"
+onclick="closeOrderModal()">
+
+&times;
+
+</span>
+
+
+<h2>
+Order Details
+</h2>
+
+
+<div id="order-details">
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+<script src="js/admin.js"></script>
+
+<script>
+
+if(localStorage.getItem("adminLogin") !== "true"){
+
+window.location.href="admin-login.html";
+
+}
+
+</script>
+</body>
+
+</html>
