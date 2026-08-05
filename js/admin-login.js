@@ -22,20 +22,27 @@ document.getElementById("admin-username").value;
 
 let password =
 document.getElementById("admin-password").value;
+console.log("Username:", username);
+console.log("Password typed:", password);
+console.log("Saved password:", localStorage.getItem("adminPassword"));
 
 
 
-// CHANGE THESE DETAILS
+// ADMIN ACCOUNT
 
-let adminUsername = "admin";
+let adminAccount = {
 
-let adminPassword = "12345";
+username: "Eric",
 
+password:
+localStorage.getItem("adminPassword") || "EricStore@2026"
 
+};
 
-
-if(username === adminUsername && password === adminPassword){
-
+if(
+username === adminAccount.username &&
+password === adminAccount.password
+){
 
 
 localStorage.setItem(
@@ -44,6 +51,11 @@ localStorage.setItem(
 );
 
 
+
+localStorage.setItem(
+"adminName",
+username
+);
 
 window.location.href =
 "admin.html";

@@ -1,8 +1,34 @@
 // ===============================
+// ADMIN SECURITY CHECK
+// ===============================
+
+if(localStorage.getItem("adminLogin") !== "true"){
+
+window.location.href = "admin-login.html";
+
+}
+// ===============================
 // LOAD DATA
 // ===============================
 
+// ===============================
+// DISPLAY ADMIN NAME
+// ===============================
 
+let adminName =
+localStorage.getItem("adminName");
+
+
+let welcomeAdmin =
+document.getElementById("welcome-admin");
+
+
+if(welcomeAdmin){
+
+welcomeAdmin.textContent =
+"Welcome, " + adminName;
+
+}
 let products =
 JSON.parse(localStorage.getItem("products")) || [];
 
@@ -1365,5 +1391,82 @@ onclick="deleteOrder(${orders.indexOf(order)})">
 });
 
 table.innerHTML=html;
+
+}
+// ===============================
+// LOGOUT
+// ===============================
+
+const logoutBtn =
+document.getElementById("logout-btn");
+
+
+if(logoutBtn){
+
+logoutBtn.addEventListener("click", function(e){
+
+e.preventDefault();
+
+
+localStorage.removeItem("adminLogin");
+
+localStorage.removeItem("adminName");
+
+
+window.location.href =
+"admin-login.html";
+
+
+});
+
+}
+// ===============================
+// CHANGE PASSWORD
+// ===============================
+
+const changePasswordBtn =
+document.getElementById("change-password-btn");
+
+
+if(changePasswordBtn){
+
+changePasswordBtn.addEventListener("click", function(e){
+
+e.preventDefault();
+
+
+let oldPassword = prompt(
+"Enter current password:"
+);
+
+
+if(oldPassword !== "EricStore@2026"){
+
+alert("Wrong current password");
+
+return;
+
+}
+
+
+let newPassword = prompt(
+"Enter new password:"
+);
+
+
+if(newPassword){
+
+localStorage.setItem(
+"adminPassword",
+newPassword
+);
+
+
+alert("Password changed successfully");
+
+}
+
+
+});
 
 }

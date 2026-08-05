@@ -25,12 +25,20 @@ Admin Dashboard - Kobby's Phone Accessories
 Kobby's Admin Dashboard
 </h1>
 
+<h2 id="welcome-admin"></h2>
+<nav>
 
 <nav>
 
 <a href="index.html">
 🏠 Store
 </a>
+
+
+<a href="#" id="change-password-btn">
+🔐 Change Password
+</a>
+
 
 <a href="#" id="logout-btn">
 🚪 Logout
@@ -583,15 +591,7 @@ Order Details
 
 <script src="js/admin.js"></script>
 
-<script>
 
-if(localStorage.getItem("adminLogin") !== "true"){
-
-window.location.href="admin-login.html";
-
-}
-
-</script>
 </body>
 
 </html>
