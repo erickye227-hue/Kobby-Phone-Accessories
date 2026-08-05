@@ -525,6 +525,131 @@ alert("Product deleted successfully!");
 
 }
 // ===============================
+// ADD PRODUCT
+// ===============================
+
+const productForm =
+document.getElementById("product-form");
+
+
+if(productForm){
+
+
+productForm.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+
+let name =
+document.getElementById("product-name").value;
+
+
+let category =
+document.getElementById("product-category").value;
+
+
+let price =
+document.getElementById("product-price").value;
+
+
+let stock =
+document.getElementById("product-stock").value;
+
+
+let imageInput =
+document.getElementById("product-image");
+
+
+let image = "images/no-image.png";
+
+
+
+function saveProduct(){
+
+
+let newProduct = {
+
+
+name:name,
+
+category:category,
+
+price:Number(price),
+
+stock:Number(stock),
+
+image:image
+
+
+};
+
+
+
+products.push(newProduct);
+
+
+
+localStorage.setItem(
+"products",
+JSON.stringify(products)
+);
+
+
+
+displayProducts();
+
+loadDashboard();
+
+
+productForm.reset();
+
+
+alert("Product added successfully!");
+
+
+
+}
+
+
+
+if(imageInput.files[0]){
+
+
+let reader = new FileReader();
+
+
+reader.onload = function(){
+
+
+image = reader.result;
+
+
+saveProduct();
+
+
+};
+
+
+reader.readAsDataURL(
+imageInput.files[0]
+);
+
+
+
+}else{
+
+
+saveProduct();
+
+
+}
+
+
+
+});
+
+}
+// ===============================
 // DISPLAY ORDERS
 // ===============================
 
@@ -1440,8 +1565,9 @@ let oldPassword = prompt(
 );
 
 
-if(oldPassword !== "EricStore@2026"){
-
+if(
+oldPassword !== localStorage.getItem("adminPassword")
+){
 alert("Wrong current password");
 
 return;
