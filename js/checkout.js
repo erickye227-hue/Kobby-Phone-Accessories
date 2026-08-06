@@ -134,7 +134,15 @@ checkoutForm.addEventListener("submit", function(e){
     document.getElementById("customer-address").value;
 
 
+let paymentNetwork =
+document.getElementById("payment-network").value;
 
+
+let transactionId =
+document.getElementById("transaction-id").value;
+
+console.log("Payment Network:", paymentNetwork);
+console.log("Transaction ID:", transactionId);
 
     let message = 
 `Hello Kobby, I want to place an order.
@@ -147,6 +155,12 @@ ${phone}
 
 Address:
 ${address}
+
+Payment Network:
+${paymentNetwork}
+
+Transaction ID:
+${transactionId}
 
 
 Order Details:
@@ -241,6 +255,12 @@ let newOrder = {
     items: cart,
 
     total: total,
+
+    paymentNetwork: paymentNetwork,
+
+    transactionId: transactionId,
+
+    paymentStatus: "Pending Verification",
 
     status: "Pending",
 

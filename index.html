@@ -16,7 +16,6 @@ TEST KOBBY STORE
 <link rel="stylesheet" href="css/style.css">
 
 
-<link rel="manifest" href="manifest.json">
 
 <meta name="theme-color" content="#ff6600">
 
@@ -26,9 +25,7 @@ TEST KOBBY STORE
 
 <body>
 
-<h1 style="color:red;">
-LIVE SERVER TEST
-</h1>
+
 <header>
 
 <h1>
@@ -619,13 +616,10 @@ if("serviceWorker" in navigator){
 window.addEventListener("load", ()=>{
 
 
-navigator.serviceWorker.register("service-worker.js")
 
-.then(()=>{
 
-console.log("Service Worker Registered");
 
-});
+
 
 
 });

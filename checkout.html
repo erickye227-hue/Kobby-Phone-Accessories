@@ -15,9 +15,7 @@ Checkout - Kobby's Phone Accessories & Repair
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -25,126 +23,206 @@ Checkout - Kobby's Phone Accessories & Repair
 Kobby's Phone Accessories & Repair
 </h1>
 
-
 <nav>
 
 <a href="index.html">
 🏠 Home
 </a>
 
-
 <a href="cart.html">
 🛒 Cart
 </a>
-
 
 </nav>
 
 </header>
 
-
-
 <main>
 
-
 <section class="checkout-section">
-
 
 <h2>
 Checkout
 </h2>
 
-
-
 <form id="checkout-form">
 
-
-
-<!-- Customer Information -->
+<!-- =========================
+     CUSTOMER INFORMATION
+========================= -->
 
 <div class="checkout-box">
-
 
 <h3>
 Customer Information
 </h3>
 
-
-<input 
-type="text" 
+<input
+type="text"
 id="customer-name"
 placeholder="Full Name"
 required
 >
 
-
-<input 
-type="tel" 
+<input
+type="tel"
 id="customer-phone"
 placeholder="Phone Number"
 required
 >
-
-
 
 <textarea
 id="customer-address"
 placeholder="Delivery Address"
 required></textarea>
 
-
-
 </div>
 
-
-
-
-<!-- Order Summary -->
+<!-- =========================
+     ORDER SUMMARY
+========================= -->
 
 <div class="checkout-box">
-
 
 <h3>
 Your Order
 </h3>
 
-
 <div id="order-summary">
 
 </div>
-
-
 
 <h3 id="checkout-total">
 Total: ₵0
 </h3>
 
+</div>
+
+<!-- =========================
+     PAYMENT INFORMATION
+========================= -->
+
+<div class="payment-box">
+
+<h3>
+💳 Payment Information
+</h3>
+
+
+<p class="payment-note">
+Please make payment before placing your order.
+</p>
+
+
+<label>
+Choose Mobile Money Network
+</label>
+
+
+<select id="payment-network" required>
+
+<option value="">
+Select Network
+</option>
+
+<option value="MTN MoMo">
+MTN Mobile Money
+</option>
+
+<option value="Telecel Cash">
+Telecel Cash
+</option>
+
+<option value="AirtelTigo Money">
+AirtelTigo Money
+</option>
+
+</select>
+
+
+
+<div class="momo-details">
+
+
+<h4>
+Send Payment To
+</h4>
+
+
+<div class="network-card">
+
+<span>🟡 MTN MoMo</span>
+
+<strong>
+054 633 7995
+</strong>
+
+</div>
+
+
+<div class="network-card">
+
+<span>🔴 Telecel Cash</span>
+
+<strong>
+054 633 7995
+</strong>
+
+</div>
+
+
+<div class="network-card">
+
+<span>🔵 AirtelTigo Money</span>
+
+<strong>
+054 633 7995
+</strong>
+
+</div>
+
+
+<p>
+<strong>Account Name:</strong><br>
+Kobby's Phone Accessories
+</p>
 
 
 </div>
 
 
 
+<label>
+Transaction ID
+</label>
 
-<button type="submit" class="place-order-btn">
 
-Place Order
+<input
+type="text"
+id="transaction-id"
+placeholder="Enter payment transaction ID"
+required
+>
+
+
+</div>
+<!-- =========================
+     PLACE ORDER
+========================= -->
+
+<button
+type="submit"
+class="place-order-btn">
+
+🛍️ Place Order
 
 </button>
 
-
-
 </form>
-
-
 
 </section>
 
-
 </main>
-
-
-
 
 <footer>
 
@@ -154,11 +232,7 @@ Place Order
 
 </footer>
 
-
-
-
 <script src="js/checkout.js"></script>
-
 
 </body>
 
