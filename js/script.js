@@ -63,6 +63,22 @@ let products = JSON.parse(localStorage.getItem("products")) || [
     category:"Protection",
     stock:10,
     image:"images/screen-protector.webp"
+},
+
+{
+    name:"Samsung Charger",
+    price:100,
+    category:"Charger",
+    stock:1,
+    image:"images/samsung-charger.webp"
+},
+
+{
+    name:"Bluetooth Speaker",
+    price:560,
+    category:"Audio",
+    stock:1,
+    image:"images/bluetooth-speaker.webp"
 }
 
 
